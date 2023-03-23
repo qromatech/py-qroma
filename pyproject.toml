@@ -9,6 +9,7 @@ packages = [{include = "py_qroma"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pyserial = "^3.5"
+protobuf = "~3.20.1"
 
 
 [build-system]

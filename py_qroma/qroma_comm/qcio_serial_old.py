@@ -54,6 +54,11 @@ class QcioSerial(qcio_base.QcioBase):
         if len(bytes_to_send) > 0:
             do_send(bytes_to_send)
 
+    async def send_bytes_base64_with_newline(self, cmd_bytes: bytes):
+        b64_cmd_bytes = base64.b64encode(cmd_bytes) + b"\n"
+        print(f"SENDING B64: {b64_cmd_bytes}")
+        await self.send_bytes(b64_cmd_bytes)
+
     async def read_next_byte(self, timeout: float):
         return await self.read_n_bytes(1, timeout)
 

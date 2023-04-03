@@ -1,11 +1,11 @@
 import asyncio
 import time
 
+
 EXPECTED_LINE_COUNT_MAX = 1000
 
 
 class QcioBase:
-    pass
 
     def send_bytes(self, cmd_bytes: bytearray) -> None:
         pass
@@ -14,8 +14,8 @@ class QcioBase:
         pass
         # return self.read_n_bytes(1)
 
-    # async def read_n_bytes(self, byte_count: float) -> bytes:
-    #     pass
+    async def read_n_bytes(self, byte_count: int, timeout: float) -> bytes:
+        pass
 
     # async def read_until_byte_count(self, byte_count: int, timeout: float) -> bytes:
     #     now = time.time()
@@ -37,7 +37,8 @@ class QcioBase:
 
         data = bytearray()
         while time.time() < give_up_time:
-            b = await self.read_next_byte(0.1)
+            # b = await self.read_next_byte(0.1)
+            b = await self.read_n_bytes(100, 0.1)
             data += b
 
         return data
@@ -92,3 +93,54 @@ class QcioBase:
         # print("THE LINES")
         # print(the_lines)
         return the_lines
+
+    # async def read_until_pb_parsed(self, pb_message_instance, timeout: float):
+    #     now = time.time()
+    #     give_up_time = now + timeout
+    #
+    #     response_bytes = b''
+    #     while time.time() < give_up_time:
+    #         # b = await qcio.read_next_byte(0.1)
+    #         b = await self.read_n_bytes(100, 0.3)
+    #         if b:
+    #             response_bytes += b
+    #             print("RECEIVEDxx... ")
+    #             print(response_bytes)
+    #
+    #             try:
+    #                 pb_message_instance.ParseFromString(response_bytes)
+    #                 print(pb_message_instance)
+    #                 return pb_message_instance
+    #             except:
+    #                 print(f"PARSE FAILURE: {response_bytes}")
+    #                 pass
+    #
+    #     return None
+    #
+    # async def read_until_base64_newline_pb_parsed(self, pb_message_instance, timeout: float):
+    #     now = time.time()
+    #     give_up_time = now + timeout
+    #
+    #     response_bytes = b''
+    #     while time.time() < give_up_time:
+    #         b = await self.read_n_bytes(100, 0.3)
+    #         if b:
+    #             response_bytes += b
+    #             print("RECEIVEDyy... ")
+    #             print(response_bytes)
+    #
+    #             try:
+    #                 print(response_bytes[-1])
+    #                 if response_bytes[-1] == 10:
+    #                     to_parse = response_bytes[:-1]
+    #                     print("TO PARSE")
+    #                     print(to_parse)
+    #                     b = base64.b64decode(to_parse)
+    #                     pb_message_instance.ParseFromString(b)
+    #                     print(pb_message_instance)
+    #                     return pb_message_instance
+    #             except:
+    #                 print(f"PARSE FAILURE: {response_bytes}")
+    #                 pass
+    #
+    #     return None

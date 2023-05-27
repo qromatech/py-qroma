@@ -3,6 +3,12 @@ import serial
 import time
 from dataclasses import dataclass
 import base64
+from ..qroma_comm_proto import qroma_comm_pb2
+# import qroma_comm_pb2
+# import py_qroma
+# from py_qroma import qroma_comm_proto
+# from ..qroma_comm_proto import *
+
 
 
 @dataclass
@@ -153,3 +159,40 @@ class QcioSerial:
             data += b
 
         return data
+
+    async def send_fs_command(self, fs_command):
+        qroma_comm_command = qroma_comm_pb2.QromaCommCommand()
+        qroma_comm_command.fsCommand.CopyFrom(fs_command)
+
+        # set_light_color.r = 0
+        # set_light_color.g = 100
+        # set_light_color.b = 0
+        #
+        # my_app_command = hello_qroma_pb2.MyAppCommand()
+        # my_app_command.setLightColor.CopyFrom(set_light_color)
+
+        msg_bytes = qroma_comm_command.SerializeToString()
+        await self.send_bytes_base64_with_newline(msg_bytes)
+
+    async def send_qroma_config_command(self, qroma_config_command):
+        qroma_comm_command = qroma_comm_pb2.QromaCommCommand()
+
+        print("MODULE")
+        print(qroma_comm_pb2)
+        print("LOCAL COMM COMMAND")
+        print(qroma_comm_command.commConfigCommand.__class__)
+        print("INPUT")
+        print(qroma_config_command.__class__)
+
+        qroma_comm_command.commConfigCommand.CopyFrom(qroma_config_command)
+        msg_bytes = qroma_comm_command.SerializeToString()
+        await self.send_bytes_base64_with_newline(msg_bytes)
+
+    async def send_app_command_bytes(self, app_command_bytes):
+        print("APP COMMAND BYTES")
+        print(app_command_bytes)
+        qroma_comm_command = qroma_comm_pb2.QromaCommCommand()
+        qroma_comm_command.appCommandBytes = app_command_bytes
+
+        msg_bytes = qroma_comm_command.SerializeToString()
+        await self.send_bytes_base64_with_newline(msg_bytes)

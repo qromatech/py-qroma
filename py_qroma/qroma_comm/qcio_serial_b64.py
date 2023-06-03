@@ -4,10 +4,7 @@ import time
 from dataclasses import dataclass
 import base64
 from ..qroma_comm_proto import qroma_comm_pb2
-# import qroma_comm_pb2
-# import py_qroma
-# from py_qroma import qroma_comm_proto
-# from ..qroma_comm_proto import *
+from ..qroma_comm_proto import file_system_commands_pb2
 
 
 
@@ -164,13 +161,6 @@ class QcioSerial:
         qroma_comm_command = qroma_comm_pb2.QromaCommCommand()
         qroma_comm_command.fsCommand.CopyFrom(fs_command)
 
-        # set_light_color.r = 0
-        # set_light_color.g = 100
-        # set_light_color.b = 0
-        #
-        # my_app_command = hello_qroma_pb2.MyAppCommand()
-        # my_app_command.setLightColor.CopyFrom(set_light_color)
-
         msg_bytes = qroma_comm_command.SerializeToString()
         await self.send_bytes_base64_with_newline(msg_bytes)
 
@@ -196,3 +186,19 @@ class QcioSerial:
 
         msg_bytes = qroma_comm_command.SerializeToString()
         await self.send_bytes_base64_with_newline(msg_bytes)
+
+    async def report_file_data(self, file_name):
+        llc = qroma_comm_pb2.QromaCommCommand()
+
+        command = file_system_commands_pb2.ReportFileDataCommand()
+        command.filename = file_name
+
+        llc.fsCommand.reportFileDataCommand.CopyFrom(command)
+
+        cmd_bytes = llc.SerializeToString()
+        await self.send_bytes_base64_with_newline(cmd_bytes)
+
+        qc_response = qroma_comm_pb2.QromaCommResponse()
+        response = await self.read_until_base64_newline_pb_parsed(qc_response, 5)
+
+        return response

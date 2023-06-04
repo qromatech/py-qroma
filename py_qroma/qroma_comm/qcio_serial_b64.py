@@ -187,15 +187,31 @@ class QcioSerial:
         msg_bytes = qroma_comm_command.SerializeToString()
         await self.send_bytes_base64_with_newline(msg_bytes)
 
-    async def report_file_data(self, file_name):
-        llc = qroma_comm_pb2.QromaCommCommand()
+    async def get_file_data(self, file_name):
+        qcc = qroma_comm_pb2.QromaCommCommand()
 
         command = file_system_commands_pb2.ReportFileDataCommand()
         command.filename = file_name
 
-        llc.fsCommand.reportFileDataCommand.CopyFrom(command)
+        qcc.fsCommand.reportFileDataCommand.CopyFrom(command)
 
-        cmd_bytes = llc.SerializeToString()
+        cmd_bytes = qcc.SerializeToString()
+        await self.send_bytes_base64_with_newline(cmd_bytes)
+
+        qc_response = qroma_comm_pb2.QromaCommResponse()
+        response = await self.read_until_base64_newline_pb_parsed(qc_response, 5)
+
+        return response
+
+    async def get_file_contents(self, file_path):
+        qcc = qroma_comm_pb2.QromaCommCommand()
+
+        command = file_system_commands_pb2.GetFileContentsCommand()
+        command.filePath = file_path
+
+        qcc.fsCommand.getFileContentsCommand.CopyFrom(command)
+
+        cmd_bytes = qcc.SerializeToString()
         await self.send_bytes_base64_with_newline(cmd_bytes)
 
         qc_response = qroma_comm_pb2.QromaCommResponse()

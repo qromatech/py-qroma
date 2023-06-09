@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x66ile-system-commands.proto\"L\n\x07\x44irItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x0b\x64irItemType\x18\x02 \x01(\x0e\x32\x0c.DirItemType\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\r\"@\n\x08\x46ileData\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x66ilesize\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\";\n\x1cStoreUpcomingFileDataCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\"b\n\x1dStoreUpcomingFileDataResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x62ytesWritten\x18\x02 \x01(\r\x12\x1a\n\x07\x63ommand\x18\x03 \x01(\x0b\x32\t.FileData\"!\n\rRmFileCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"G\n\x0eRmFileResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12$\n\x0crmDirCommand\x18\x02 \x01(\x0b\x32\x0e.RmFileCommand\")\n\x15ReportFileDataCommand\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\"I\n\x16ReportFileDataResponse\x12\x12\n\nfileExists\x18\x01 \x01(\x08\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\")\n\x16ListDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"F\n\x17ListDirContentsResponse\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x1a\n\x08\x64irItems\x18\x02 \x03(\x0b\x32\x08.DirItem\"*\n\x17PrintDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"\'\n\x16ResetFilesystemCommand\x12\r\n\x05\x64ummy\x18\x01 \x01(\x08\"*\n\x17ResetFilesystemResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"*\n\x16GetFileContentsCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"q\n\x17GetFileContentsResponse\x12&\n\nstatusCode\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x03 \x01(\x0c\"F\n\x14WriteFileDataCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x02 \x01(\x0c\"a\n\x15WriteFileDataResponse\x12,\n\nstatusCode\x18\x01 \x01(\x0e\x32\x18.WriteFileDataStatusCode\x12\x1a\n\x07\x63ommand\x18\x02 \x01(\x0b\x32\t.FileData\"\xec\x03\n\x11\x46ileSystemCommand\x12;\n\x17printDirContentsCommand\x18\x01 \x01(\x0b\x32\x18.PrintDirContentsCommandH\x00\x12\x39\n\x16getFileContentsCommand\x18\x02 \x01(\x0b\x32\x17.GetFileContentsCommandH\x00\x12\'\n\rrmFileCommand\x18\x03 \x01(\x0b\x32\x0e.RmFileCommandH\x00\x12\x35\n\x14writeFileDataCommand\x18\x05 \x01(\x0b\x32\x15.WriteFileDataCommandH\x00\x12\x45\n\x1cstoreUpcomingFileDataCommand\x18\x06 \x01(\x0b\x32\x1d.StoreUpcomingFileDataCommandH\x00\x12\x37\n\x15reportFileDataCommand\x18\x07 \x01(\x0b\x32\x16.ReportFileDataCommandH\x00\x12\x39\n\x16listDirContentsCommand\x18\x08 \x01(\x0b\x32\x17.ListDirContentsCommandH\x00\x12\x39\n\x16resetFilesystemCommand\x18\t \x01(\x0b\x32\x17.ResetFilesystemCommandH\x00\x42\t\n\x07\x63ommand\"\xbe\x03\n\x12\x46ileSystemResponse\x12(\n\rrmFileCommand\x18\x02 \x01(\x0b\x32\x0f.RmFileResponseH\x00\x12\x37\n\x15writeFileDataResponse\x18\x04 \x01(\x0b\x32\x16.WriteFileDataResponseH\x00\x12;\n\x17getFileContentsResponse\x18\x05 \x01(\x0b\x32\x18.GetFileContentsResponseH\x00\x12G\n\x1dstoreUpcomingFileDataResponse\x18\x06 \x01(\x0b\x32\x1e.StoreUpcomingFileDataResponseH\x00\x12\x39\n\x16reportFileDataResponse\x18\x07 \x01(\x0b\x32\x17.ReportFileDataResponseH\x00\x12;\n\x17listDirContentsResponse\x18\x08 \x01(\x0b\x32\x18.ListDirContentsResponseH\x00\x12;\n\x17resetFilesystemResponse\x18\t \x01(\x0b\x32\x18.ResetFilesystemResponseH\x00\x42\n\n\x08response*9\n\x0b\x44irItemType\x12\x0f\n\x0b\x44IT_NOT_SET\x10\x00\x12\x0c\n\x08\x44IT_FILE\x10\x01\x12\x0b\n\x07\x44IT_DIR\x10\x02*j\n\x11GetFileStatusCode\x12\x10\n\x0cGFSC_NOT_SET\x10\x00\x12\x10\n\x0cGFSC_SUCCESS\x10\x01\x12\x16\n\x12GFSC_ERR_OPEN_FILE\x10\x02\x12\x19\n\x15GFSC_ERR_INVALID_FILE\x10\x03*t\n\x17WriteFileDataStatusCode\x12\x11\n\rWFDSC_NOT_SET\x10\x00\x12\x11\n\rWFDSC_SUCCESS\x10\x01\x12\x17\n\x13WFDSC_ERR_OPEN_FILE\x10\x02\x12\x1a\n\x16WFDSC_ERR_CRC_MISMATCH\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\x1a\x66ile-system-commands.proto\"L\n\x07\x44irItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x0b\x64irItemType\x18\x02 \x01(\x0e\x32\x0c.DirItemType\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\r\"@\n\x08\x46ileData\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x66ilesize\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\";\n\x1cStoreUpcomingFileDataCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\"b\n\x1dStoreUpcomingFileDataResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x62ytesWritten\x18\x02 \x01(\r\x12\x1a\n\x07\x63ommand\x18\x03 \x01(\x0b\x32\t.FileData\"!\n\rRmFileCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"H\n\x0eRmFileResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12%\n\rrmFileCommand\x18\x02 \x01(\x0b\x32\x0e.RmFileCommand\"\x1f\n\x0cRmDirCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"E\n\rRmDirResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12#\n\x0crmDirCommand\x18\x02 \x01(\x0b\x32\r.RmDirCommand\"\x1f\n\x0cMkDirCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"E\n\rMkDirResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12#\n\x0cmkDirCommand\x18\x02 \x01(\x0b\x32\r.MkDirCommand\")\n\x15ReportFileDataCommand\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\"I\n\x16ReportFileDataResponse\x12\x12\n\nfileExists\x18\x01 \x01(\x08\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\"c\n\x16ListDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x1c\n\x14startsWithConstraint\x18\x02 \x01(\t\x12\x1a\n\x12\x65ndsWithConstraint\x18\x03 \x01(\t\"W\n\x17ListDirContentsResponse\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x1a\n\x08\x64irItems\x18\x03 \x03(\x0b\x32\x08.DirItem\"*\n\x17PrintDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"\'\n\x16ResetFilesystemCommand\x12\r\n\x05\x64ummy\x18\x01 \x01(\x08\"*\n\x17ResetFilesystemResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"*\n\x16GetFileContentsCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"q\n\x17GetFileContentsResponse\x12&\n\nstatusCode\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x03 \x01(\x0c\"F\n\x14WriteFileDataCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x02 \x01(\x0c\"a\n\x15WriteFileDataResponse\x12,\n\nstatusCode\x18\x01 \x01(\x0e\x32\x18.WriteFileDataStatusCode\x12\x1a\n\x07\x63ommand\x18\x02 \x01(\x0b\x32\t.FileData\"\xb6\x03\n\x11\x46ileSystemCommand\x12\x39\n\x16getFileContentsCommand\x18\x01 \x01(\x0b\x32\x17.GetFileContentsCommandH\x00\x12\x35\n\x14writeFileDataCommand\x18\x02 \x01(\x0b\x32\x15.WriteFileDataCommandH\x00\x12\x37\n\x15reportFileDataCommand\x18\x04 \x01(\x0b\x32\x16.ReportFileDataCommandH\x00\x12\'\n\rrmFileCommand\x18\x05 \x01(\x0b\x32\x0e.RmFileCommandH\x00\x12\x39\n\x16listDirContentsCommand\x18\t \x01(\x0b\x32\x17.ListDirContentsCommandH\x00\x12%\n\x0cmkDirCommand\x18\n \x01(\x0b\x32\r.MkDirCommandH\x00\x12%\n\x0crmDirCommand\x18\x0b \x01(\x0b\x32\r.RmDirCommandH\x00\x12\x39\n\x16resetFilesystemCommand\x18\x0f \x01(\x0b\x32\x17.ResetFilesystemCommandH\x00\x42\t\n\x07\x63ommand\"\xc7\x03\n\x12\x46ileSystemResponse\x12;\n\x17getFileContentsResponse\x18\x01 \x01(\x0b\x32\x18.GetFileContentsResponseH\x00\x12\x37\n\x15writeFileDataResponse\x18\x02 \x01(\x0b\x32\x16.WriteFileDataResponseH\x00\x12\x39\n\x16reportFileDataResponse\x18\x04 \x01(\x0b\x32\x17.ReportFileDataResponseH\x00\x12(\n\rrmFileCommand\x18\x05 \x01(\x0b\x32\x0f.RmFileResponseH\x00\x12;\n\x17listDirContentsResponse\x18\t \x01(\x0b\x32\x18.ListDirContentsResponseH\x00\x12\'\n\rmkDirResponse\x18\n \x01(\x0b\x32\x0e.MkDirResponseH\x00\x12\'\n\rrmDirResponse\x18\x0b \x01(\x0b\x32\x0e.RmDirResponseH\x00\x12;\n\x17resetFilesystemResponse\x18\x0f \x01(\x0b\x32\x18.ResetFilesystemResponseH\x00\x42\n\n\x08response*9\n\x0b\x44irItemType\x12\x0f\n\x0b\x44IT_NOT_SET\x10\x00\x12\x0c\n\x08\x44IT_FILE\x10\x01\x12\x0b\n\x07\x44IT_DIR\x10\x02*j\n\x11GetFileStatusCode\x12\x10\n\x0cGFSC_NOT_SET\x10\x00\x12\x10\n\x0cGFSC_SUCCESS\x10\x01\x12\x16\n\x12GFSC_ERR_OPEN_FILE\x10\x02\x12\x19\n\x15GFSC_ERR_INVALID_FILE\x10\x03*t\n\x17WriteFileDataStatusCode\x12\x11\n\rWFDSC_NOT_SET\x10\x00\x12\x11\n\rWFDSC_SUCCESS\x10\x01\x12\x17\n\x13WFDSC_ERR_OPEN_FILE\x10\x02\x12\x1a\n\x16WFDSC_ERR_CRC_MISMATCH\x10\x03\x62\x06proto3'
 )
 
 _DIRITEMTYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _DIRITEMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2079,
-  serialized_end=2136,
+  serialized_start=2318,
+  serialized_end=2375,
 )
 _sym_db.RegisterEnumDescriptor(_DIRITEMTYPE)
 
@@ -84,8 +84,8 @@ _GETFILESTATUSCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2138,
-  serialized_end=2244,
+  serialized_start=2377,
+  serialized_end=2483,
 )
 _sym_db.RegisterEnumDescriptor(_GETFILESTATUSCODE)
 
@@ -120,8 +120,8 @@ _WRITEFILEDATASTATUSCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2246,
-  serialized_end=2362,
+  serialized_start=2485,
+  serialized_end=2601,
 )
 _sym_db.RegisterEnumDescriptor(_WRITEFILEDATASTATUSCODE)
 
@@ -358,7 +358,7 @@ _RMFILERESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rmDirCommand', full_name='RmFileResponse.rmDirCommand', index=1,
+      name='rmFileCommand', full_name='RmFileResponse.rmFileCommand', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -377,7 +377,149 @@ _RMFILERESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=370,
-  serialized_end=441,
+  serialized_end=442,
+)
+
+
+_RMDIRCOMMAND = _descriptor.Descriptor(
+  name='RmDirCommand',
+  full_name='RmDirCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dirPath', full_name='RmDirCommand.dirPath', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=444,
+  serialized_end=475,
+)
+
+
+_RMDIRRESPONSE = _descriptor.Descriptor(
+  name='RmDirResponse',
+  full_name='RmDirResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='RmDirResponse.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rmDirCommand', full_name='RmDirResponse.rmDirCommand', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=477,
+  serialized_end=546,
+)
+
+
+_MKDIRCOMMAND = _descriptor.Descriptor(
+  name='MkDirCommand',
+  full_name='MkDirCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dirPath', full_name='MkDirCommand.dirPath', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=548,
+  serialized_end=579,
+)
+
+
+_MKDIRRESPONSE = _descriptor.Descriptor(
+  name='MkDirResponse',
+  full_name='MkDirResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='MkDirResponse.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mkDirCommand', full_name='MkDirResponse.mkDirCommand', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=581,
+  serialized_end=650,
 )
 
 
@@ -408,8 +550,8 @@ _REPORTFILEDATACOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=484,
+  serialized_start=652,
+  serialized_end=693,
 )
 
 
@@ -447,8 +589,8 @@ _REPORTFILEDATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=486,
-  serialized_end=559,
+  serialized_start=695,
+  serialized_end=768,
 )
 
 
@@ -467,6 +609,20 @@ _LISTDIRCONTENTSCOMMAND = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='startsWithConstraint', full_name='ListDirContentsCommand.startsWithConstraint', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='endsWithConstraint', full_name='ListDirContentsCommand.endsWithConstraint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -479,8 +635,8 @@ _LISTDIRCONTENTSCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=602,
+  serialized_start=770,
+  serialized_end=869,
 )
 
 
@@ -500,8 +656,15 @@ _LISTDIRCONTENTSRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dirItems', full_name='ListDirContentsResponse.dirItems', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      name='success', full_name='ListDirContentsResponse.success', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dirItems', full_name='ListDirContentsResponse.dirItems', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -518,8 +681,8 @@ _LISTDIRCONTENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=604,
-  serialized_end=674,
+  serialized_start=871,
+  serialized_end=958,
 )
 
 
@@ -550,8 +713,8 @@ _PRINTDIRCONTENTSCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=676,
-  serialized_end=718,
+  serialized_start=960,
+  serialized_end=1002,
 )
 
 
@@ -582,8 +745,8 @@ _RESETFILESYSTEMCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=720,
-  serialized_end=759,
+  serialized_start=1004,
+  serialized_end=1043,
 )
 
 
@@ -614,8 +777,8 @@ _RESETFILESYSTEMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=761,
-  serialized_end=803,
+  serialized_start=1045,
+  serialized_end=1087,
 )
 
 
@@ -646,8 +809,8 @@ _GETFILECONTENTSCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=805,
-  serialized_end=847,
+  serialized_start=1089,
+  serialized_end=1131,
 )
 
 
@@ -692,8 +855,8 @@ _GETFILECONTENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=849,
-  serialized_end=962,
+  serialized_start=1133,
+  serialized_end=1246,
 )
 
 
@@ -731,8 +894,8 @@ _WRITEFILEDATACOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=964,
-  serialized_end=1034,
+  serialized_start=1248,
+  serialized_end=1318,
 )
 
 
@@ -770,8 +933,8 @@ _WRITEFILEDATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1036,
-  serialized_end=1133,
+  serialized_start=1320,
+  serialized_end=1417,
 )
 
 
@@ -784,57 +947,57 @@ _FILESYSTEMCOMMAND = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='printDirContentsCommand', full_name='FileSystemCommand.printDirContentsCommand', index=0,
+      name='getFileContentsCommand', full_name='FileSystemCommand.getFileContentsCommand', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='getFileContentsCommand', full_name='FileSystemCommand.getFileContentsCommand', index=1,
+      name='writeFileDataCommand', full_name='FileSystemCommand.writeFileDataCommand', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rmFileCommand', full_name='FileSystemCommand.rmFileCommand', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='reportFileDataCommand', full_name='FileSystemCommand.reportFileDataCommand', index=2,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='writeFileDataCommand', full_name='FileSystemCommand.writeFileDataCommand', index=3,
+      name='rmFileCommand', full_name='FileSystemCommand.rmFileCommand', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='storeUpcomingFileDataCommand', full_name='FileSystemCommand.storeUpcomingFileDataCommand', index=4,
-      number=6, type=11, cpp_type=10, label=1,
+      name='listDirContentsCommand', full_name='FileSystemCommand.listDirContentsCommand', index=4,
+      number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reportFileDataCommand', full_name='FileSystemCommand.reportFileDataCommand', index=5,
-      number=7, type=11, cpp_type=10, label=1,
+      name='mkDirCommand', full_name='FileSystemCommand.mkDirCommand', index=5,
+      number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='listDirContentsCommand', full_name='FileSystemCommand.listDirContentsCommand', index=6,
-      number=8, type=11, cpp_type=10, label=1,
+      name='rmDirCommand', full_name='FileSystemCommand.rmDirCommand', index=6,
+      number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resetFilesystemCommand', full_name='FileSystemCommand.resetFilesystemCommand', index=7,
-      number=9, type=11, cpp_type=10, label=1,
+      number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -856,8 +1019,8 @@ _FILESYSTEMCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1136,
-  serialized_end=1628,
+  serialized_start=1420,
+  serialized_end=1858,
 )
 
 
@@ -870,50 +1033,57 @@ _FILESYSTEMRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rmFileCommand', full_name='FileSystemResponse.rmFileCommand', index=0,
-      number=2, type=11, cpp_type=10, label=1,
+      name='getFileContentsResponse', full_name='FileSystemResponse.getFileContentsResponse', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='writeFileDataResponse', full_name='FileSystemResponse.writeFileDataResponse', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reportFileDataResponse', full_name='FileSystemResponse.reportFileDataResponse', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='getFileContentsResponse', full_name='FileSystemResponse.getFileContentsResponse', index=2,
+      name='rmFileCommand', full_name='FileSystemResponse.rmFileCommand', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='storeUpcomingFileDataResponse', full_name='FileSystemResponse.storeUpcomingFileDataResponse', index=3,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reportFileDataResponse', full_name='FileSystemResponse.reportFileDataResponse', index=4,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='listDirContentsResponse', full_name='FileSystemResponse.listDirContentsResponse', index=5,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='resetFilesystemResponse', full_name='FileSystemResponse.resetFilesystemResponse', index=6,
+      name='listDirContentsResponse', full_name='FileSystemResponse.listDirContentsResponse', index=4,
       number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mkDirResponse', full_name='FileSystemResponse.mkDirResponse', index=5,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rmDirResponse', full_name='FileSystemResponse.rmDirResponse', index=6,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resetFilesystemResponse', full_name='FileSystemResponse.resetFilesystemResponse', index=7,
+      number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -935,14 +1105,16 @@ _FILESYSTEMRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1631,
-  serialized_end=2077,
+  serialized_start=1861,
+  serialized_end=2316,
 )
 
 _DIRITEM.fields_by_name['dirItemType'].enum_type = _DIRITEMTYPE
 _STOREUPCOMINGFILEDATACOMMAND.fields_by_name['fileData'].message_type = _FILEDATA
 _STOREUPCOMINGFILEDATARESPONSE.fields_by_name['command'].message_type = _FILEDATA
-_RMFILERESPONSE.fields_by_name['rmDirCommand'].message_type = _RMFILECOMMAND
+_RMFILERESPONSE.fields_by_name['rmFileCommand'].message_type = _RMFILECOMMAND
+_RMDIRRESPONSE.fields_by_name['rmDirCommand'].message_type = _RMDIRCOMMAND
+_MKDIRRESPONSE.fields_by_name['mkDirCommand'].message_type = _MKDIRCOMMAND
 _REPORTFILEDATARESPONSE.fields_by_name['fileData'].message_type = _FILEDATA
 _LISTDIRCONTENTSRESPONSE.fields_by_name['dirItems'].message_type = _DIRITEM
 _GETFILECONTENTSRESPONSE.fields_by_name['statusCode'].enum_type = _GETFILESTATUSCODE
@@ -950,63 +1122,67 @@ _GETFILECONTENTSRESPONSE.fields_by_name['fileData'].message_type = _FILEDATA
 _WRITEFILEDATACOMMAND.fields_by_name['fileData'].message_type = _FILEDATA
 _WRITEFILEDATARESPONSE.fields_by_name['statusCode'].enum_type = _WRITEFILEDATASTATUSCODE
 _WRITEFILEDATARESPONSE.fields_by_name['command'].message_type = _FILEDATA
-_FILESYSTEMCOMMAND.fields_by_name['printDirContentsCommand'].message_type = _PRINTDIRCONTENTSCOMMAND
 _FILESYSTEMCOMMAND.fields_by_name['getFileContentsCommand'].message_type = _GETFILECONTENTSCOMMAND
-_FILESYSTEMCOMMAND.fields_by_name['rmFileCommand'].message_type = _RMFILECOMMAND
 _FILESYSTEMCOMMAND.fields_by_name['writeFileDataCommand'].message_type = _WRITEFILEDATACOMMAND
-_FILESYSTEMCOMMAND.fields_by_name['storeUpcomingFileDataCommand'].message_type = _STOREUPCOMINGFILEDATACOMMAND
 _FILESYSTEMCOMMAND.fields_by_name['reportFileDataCommand'].message_type = _REPORTFILEDATACOMMAND
+_FILESYSTEMCOMMAND.fields_by_name['rmFileCommand'].message_type = _RMFILECOMMAND
 _FILESYSTEMCOMMAND.fields_by_name['listDirContentsCommand'].message_type = _LISTDIRCONTENTSCOMMAND
+_FILESYSTEMCOMMAND.fields_by_name['mkDirCommand'].message_type = _MKDIRCOMMAND
+_FILESYSTEMCOMMAND.fields_by_name['rmDirCommand'].message_type = _RMDIRCOMMAND
 _FILESYSTEMCOMMAND.fields_by_name['resetFilesystemCommand'].message_type = _RESETFILESYSTEMCOMMAND
-_FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
-  _FILESYSTEMCOMMAND.fields_by_name['printDirContentsCommand'])
-_FILESYSTEMCOMMAND.fields_by_name['printDirContentsCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
 _FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
   _FILESYSTEMCOMMAND.fields_by_name['getFileContentsCommand'])
 _FILESYSTEMCOMMAND.fields_by_name['getFileContentsCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
 _FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
-  _FILESYSTEMCOMMAND.fields_by_name['rmFileCommand'])
-_FILESYSTEMCOMMAND.fields_by_name['rmFileCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
-_FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
   _FILESYSTEMCOMMAND.fields_by_name['writeFileDataCommand'])
 _FILESYSTEMCOMMAND.fields_by_name['writeFileDataCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
-_FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
-  _FILESYSTEMCOMMAND.fields_by_name['storeUpcomingFileDataCommand'])
-_FILESYSTEMCOMMAND.fields_by_name['storeUpcomingFileDataCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
 _FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
   _FILESYSTEMCOMMAND.fields_by_name['reportFileDataCommand'])
 _FILESYSTEMCOMMAND.fields_by_name['reportFileDataCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
 _FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
+  _FILESYSTEMCOMMAND.fields_by_name['rmFileCommand'])
+_FILESYSTEMCOMMAND.fields_by_name['rmFileCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
+_FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
   _FILESYSTEMCOMMAND.fields_by_name['listDirContentsCommand'])
 _FILESYSTEMCOMMAND.fields_by_name['listDirContentsCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
 _FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
+  _FILESYSTEMCOMMAND.fields_by_name['mkDirCommand'])
+_FILESYSTEMCOMMAND.fields_by_name['mkDirCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
+_FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
+  _FILESYSTEMCOMMAND.fields_by_name['rmDirCommand'])
+_FILESYSTEMCOMMAND.fields_by_name['rmDirCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
+_FILESYSTEMCOMMAND.oneofs_by_name['command'].fields.append(
   _FILESYSTEMCOMMAND.fields_by_name['resetFilesystemCommand'])
 _FILESYSTEMCOMMAND.fields_by_name['resetFilesystemCommand'].containing_oneof = _FILESYSTEMCOMMAND.oneofs_by_name['command']
-_FILESYSTEMRESPONSE.fields_by_name['rmFileCommand'].message_type = _RMFILERESPONSE
-_FILESYSTEMRESPONSE.fields_by_name['writeFileDataResponse'].message_type = _WRITEFILEDATARESPONSE
 _FILESYSTEMRESPONSE.fields_by_name['getFileContentsResponse'].message_type = _GETFILECONTENTSRESPONSE
-_FILESYSTEMRESPONSE.fields_by_name['storeUpcomingFileDataResponse'].message_type = _STOREUPCOMINGFILEDATARESPONSE
+_FILESYSTEMRESPONSE.fields_by_name['writeFileDataResponse'].message_type = _WRITEFILEDATARESPONSE
 _FILESYSTEMRESPONSE.fields_by_name['reportFileDataResponse'].message_type = _REPORTFILEDATARESPONSE
+_FILESYSTEMRESPONSE.fields_by_name['rmFileCommand'].message_type = _RMFILERESPONSE
 _FILESYSTEMRESPONSE.fields_by_name['listDirContentsResponse'].message_type = _LISTDIRCONTENTSRESPONSE
+_FILESYSTEMRESPONSE.fields_by_name['mkDirResponse'].message_type = _MKDIRRESPONSE
+_FILESYSTEMRESPONSE.fields_by_name['rmDirResponse'].message_type = _RMDIRRESPONSE
 _FILESYSTEMRESPONSE.fields_by_name['resetFilesystemResponse'].message_type = _RESETFILESYSTEMRESPONSE
-_FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
-  _FILESYSTEMRESPONSE.fields_by_name['rmFileCommand'])
-_FILESYSTEMRESPONSE.fields_by_name['rmFileCommand'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
-_FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
-  _FILESYSTEMRESPONSE.fields_by_name['writeFileDataResponse'])
-_FILESYSTEMRESPONSE.fields_by_name['writeFileDataResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
 _FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
   _FILESYSTEMRESPONSE.fields_by_name['getFileContentsResponse'])
 _FILESYSTEMRESPONSE.fields_by_name['getFileContentsResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
 _FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
-  _FILESYSTEMRESPONSE.fields_by_name['storeUpcomingFileDataResponse'])
-_FILESYSTEMRESPONSE.fields_by_name['storeUpcomingFileDataResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
+  _FILESYSTEMRESPONSE.fields_by_name['writeFileDataResponse'])
+_FILESYSTEMRESPONSE.fields_by_name['writeFileDataResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
 _FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
   _FILESYSTEMRESPONSE.fields_by_name['reportFileDataResponse'])
 _FILESYSTEMRESPONSE.fields_by_name['reportFileDataResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
 _FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
+  _FILESYSTEMRESPONSE.fields_by_name['rmFileCommand'])
+_FILESYSTEMRESPONSE.fields_by_name['rmFileCommand'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
+_FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
   _FILESYSTEMRESPONSE.fields_by_name['listDirContentsResponse'])
 _FILESYSTEMRESPONSE.fields_by_name['listDirContentsResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
+_FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
+  _FILESYSTEMRESPONSE.fields_by_name['mkDirResponse'])
+_FILESYSTEMRESPONSE.fields_by_name['mkDirResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
+_FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
+  _FILESYSTEMRESPONSE.fields_by_name['rmDirResponse'])
+_FILESYSTEMRESPONSE.fields_by_name['rmDirResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
 _FILESYSTEMRESPONSE.oneofs_by_name['response'].fields.append(
   _FILESYSTEMRESPONSE.fields_by_name['resetFilesystemResponse'])
 _FILESYSTEMRESPONSE.fields_by_name['resetFilesystemResponse'].containing_oneof = _FILESYSTEMRESPONSE.oneofs_by_name['response']
@@ -1016,6 +1192,10 @@ DESCRIPTOR.message_types_by_name['StoreUpcomingFileDataCommand'] = _STOREUPCOMIN
 DESCRIPTOR.message_types_by_name['StoreUpcomingFileDataResponse'] = _STOREUPCOMINGFILEDATARESPONSE
 DESCRIPTOR.message_types_by_name['RmFileCommand'] = _RMFILECOMMAND
 DESCRIPTOR.message_types_by_name['RmFileResponse'] = _RMFILERESPONSE
+DESCRIPTOR.message_types_by_name['RmDirCommand'] = _RMDIRCOMMAND
+DESCRIPTOR.message_types_by_name['RmDirResponse'] = _RMDIRRESPONSE
+DESCRIPTOR.message_types_by_name['MkDirCommand'] = _MKDIRCOMMAND
+DESCRIPTOR.message_types_by_name['MkDirResponse'] = _MKDIRRESPONSE
 DESCRIPTOR.message_types_by_name['ReportFileDataCommand'] = _REPORTFILEDATACOMMAND
 DESCRIPTOR.message_types_by_name['ReportFileDataResponse'] = _REPORTFILEDATARESPONSE
 DESCRIPTOR.message_types_by_name['ListDirContentsCommand'] = _LISTDIRCONTENTSCOMMAND
@@ -1075,6 +1255,34 @@ RmFileResponse = _reflection.GeneratedProtocolMessageType('RmFileResponse', (_me
   # @@protoc_insertion_point(class_scope:RmFileResponse)
   })
 _sym_db.RegisterMessage(RmFileResponse)
+
+RmDirCommand = _reflection.GeneratedProtocolMessageType('RmDirCommand', (_message.Message,), {
+  'DESCRIPTOR' : _RMDIRCOMMAND,
+  '__module__' : 'file_system_commands_pb2'
+  # @@protoc_insertion_point(class_scope:RmDirCommand)
+  })
+_sym_db.RegisterMessage(RmDirCommand)
+
+RmDirResponse = _reflection.GeneratedProtocolMessageType('RmDirResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RMDIRRESPONSE,
+  '__module__' : 'file_system_commands_pb2'
+  # @@protoc_insertion_point(class_scope:RmDirResponse)
+  })
+_sym_db.RegisterMessage(RmDirResponse)
+
+MkDirCommand = _reflection.GeneratedProtocolMessageType('MkDirCommand', (_message.Message,), {
+  'DESCRIPTOR' : _MKDIRCOMMAND,
+  '__module__' : 'file_system_commands_pb2'
+  # @@protoc_insertion_point(class_scope:MkDirCommand)
+  })
+_sym_db.RegisterMessage(MkDirCommand)
+
+MkDirResponse = _reflection.GeneratedProtocolMessageType('MkDirResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MKDIRRESPONSE,
+  '__module__' : 'file_system_commands_pb2'
+  # @@protoc_insertion_point(class_scope:MkDirResponse)
+  })
+_sym_db.RegisterMessage(MkDirResponse)
 
 ReportFileDataCommand = _reflection.GeneratedProtocolMessageType('ReportFileDataCommand', (_message.Message,), {
   'DESCRIPTOR' : _REPORTFILEDATACOMMAND,

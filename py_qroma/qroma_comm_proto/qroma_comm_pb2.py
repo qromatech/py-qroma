@@ -11,8 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from . import file_system_commands_pb2 as file__system__commands__pb2
-from . import qroma_comm_config_commands_pb2 as qroma__comm__config__commands__pb2
+import file_system_commands_pb2 as file__system__commands__pb2
+import qroma_comm_config_commands_pb2 as qroma__comm__config__commands__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10qroma-comm.proto\x1a\x1a\x66ile-system-commands.proto\x1a qroma-comm-config-commands.proto\"\x97\x01\n\x10QromaCommCommand\x12\x19\n\x0f\x61ppCommandBytes\x18\x01 \x01(\x0cH\x00\x12\'\n\tfsCommand\x18\x02 \x01(\x0b\x32\x12.FileSystemCommandH\x00\x12\x34\n\x11\x63ommConfigCommand\x18\x03 \x01(\x0b\x32\x17.QromaCommConfigCommandH\x00\x42\t\n\x07\x63ommand\"\x9d\x01\n\x11QromaCommResponse\x12\x1a\n\x10\x61ppResponseBytes\x18\x01 \x01(\x0cH\x00\x12)\n\nfsResponse\x18\x02 \x01(\x0b\x32\x13.FileSystemResponseH\x00\x12\x35\n\x12\x63ommConfigResponse\x18\x03 \x01(\x0b\x32\x17.QromaCommConfigCommandH\x00\x42\n\n\x08responseb\x06proto3'
+  serialized_pb=b'\n\x10qroma-comm.proto\x1a\x1a\x66ile-system-commands.proto\x1a qroma-comm-config-commands.proto\"\x97\x01\n\x10QromaCommCommand\x12\x19\n\x0f\x61ppCommandBytes\x18\x01 \x01(\x0cH\x00\x12\'\n\tfsCommand\x18\x02 \x01(\x0b\x32\x12.FileSystemCommandH\x00\x12\x34\n\x11\x63ommConfigCommand\x18\x03 \x01(\x0b\x32\x17.QromaCommConfigCommandH\x00\x42\t\n\x07\x63ommand\"H\n\x1aQromaCommHeartbeatResponse\x12\x12\n\nuptimeInMs\x18\x01 \x01(\r\x12\x16\n\x0eheartbeatTicks\x18\x02 \x01(\r\"\xd8\x01\n\x11QromaCommResponse\x12\x1a\n\x10\x61ppResponseBytes\x18\x01 \x01(\x0cH\x00\x12)\n\nfsResponse\x18\x02 \x01(\x0b\x32\x13.FileSystemResponseH\x00\x12\x36\n\x12\x63ommConfigResponse\x18\x03 \x01(\x0b\x32\x18.QromaCommConfigResponseH\x00\x12\x38\n\x11heartbeatResponse\x18\x04 \x01(\x0b\x32\x1b.QromaCommHeartbeatResponseH\x00\x42\n\n\x08responseb\x06proto3'
   ,
   dependencies=[file__system__commands__pb2.DESCRIPTOR,qroma__comm__config__commands__pb2.DESCRIPTOR,])
 
@@ -79,6 +79,45 @@ _QROMACOMMCOMMAND = _descriptor.Descriptor(
 )
 
 
+_QROMACOMMHEARTBEATRESPONSE = _descriptor.Descriptor(
+  name='QromaCommHeartbeatResponse',
+  full_name='QromaCommHeartbeatResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uptimeInMs', full_name='QromaCommHeartbeatResponse.uptimeInMs', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='heartbeatTicks', full_name='QromaCommHeartbeatResponse.heartbeatTicks', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=236,
+  serialized_end=308,
+)
+
+
 _QROMACOMMRESPONSE = _descriptor.Descriptor(
   name='QromaCommResponse',
   full_name='QromaCommResponse',
@@ -108,6 +147,13 @@ _QROMACOMMRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='heartbeatResponse', full_name='QromaCommResponse.heartbeatResponse', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -125,8 +171,8 @@ _QROMACOMMRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=237,
-  serialized_end=394,
+  serialized_start=311,
+  serialized_end=527,
 )
 
 _QROMACOMMCOMMAND.fields_by_name['fsCommand'].message_type = file__system__commands__pb2._FILESYSTEMCOMMAND
@@ -141,7 +187,8 @@ _QROMACOMMCOMMAND.oneofs_by_name['command'].fields.append(
   _QROMACOMMCOMMAND.fields_by_name['commConfigCommand'])
 _QROMACOMMCOMMAND.fields_by_name['commConfigCommand'].containing_oneof = _QROMACOMMCOMMAND.oneofs_by_name['command']
 _QROMACOMMRESPONSE.fields_by_name['fsResponse'].message_type = file__system__commands__pb2._FILESYSTEMRESPONSE
-_QROMACOMMRESPONSE.fields_by_name['commConfigResponse'].message_type = qroma__comm__config__commands__pb2._QROMACOMMCONFIGCOMMAND
+_QROMACOMMRESPONSE.fields_by_name['commConfigResponse'].message_type = qroma__comm__config__commands__pb2._QROMACOMMCONFIGRESPONSE
+_QROMACOMMRESPONSE.fields_by_name['heartbeatResponse'].message_type = _QROMACOMMHEARTBEATRESPONSE
 _QROMACOMMRESPONSE.oneofs_by_name['response'].fields.append(
   _QROMACOMMRESPONSE.fields_by_name['appResponseBytes'])
 _QROMACOMMRESPONSE.fields_by_name['appResponseBytes'].containing_oneof = _QROMACOMMRESPONSE.oneofs_by_name['response']
@@ -151,7 +198,11 @@ _QROMACOMMRESPONSE.fields_by_name['fsResponse'].containing_oneof = _QROMACOMMRES
 _QROMACOMMRESPONSE.oneofs_by_name['response'].fields.append(
   _QROMACOMMRESPONSE.fields_by_name['commConfigResponse'])
 _QROMACOMMRESPONSE.fields_by_name['commConfigResponse'].containing_oneof = _QROMACOMMRESPONSE.oneofs_by_name['response']
+_QROMACOMMRESPONSE.oneofs_by_name['response'].fields.append(
+  _QROMACOMMRESPONSE.fields_by_name['heartbeatResponse'])
+_QROMACOMMRESPONSE.fields_by_name['heartbeatResponse'].containing_oneof = _QROMACOMMRESPONSE.oneofs_by_name['response']
 DESCRIPTOR.message_types_by_name['QromaCommCommand'] = _QROMACOMMCOMMAND
+DESCRIPTOR.message_types_by_name['QromaCommHeartbeatResponse'] = _QROMACOMMHEARTBEATRESPONSE
 DESCRIPTOR.message_types_by_name['QromaCommResponse'] = _QROMACOMMRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -161,6 +212,13 @@ QromaCommCommand = _reflection.GeneratedProtocolMessageType('QromaCommCommand', 
   # @@protoc_insertion_point(class_scope:QromaCommCommand)
   })
 _sym_db.RegisterMessage(QromaCommCommand)
+
+QromaCommHeartbeatResponse = _reflection.GeneratedProtocolMessageType('QromaCommHeartbeatResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QROMACOMMHEARTBEATRESPONSE,
+  '__module__' : 'qroma_comm_pb2'
+  # @@protoc_insertion_point(class_scope:QromaCommHeartbeatResponse)
+  })
+_sym_db.RegisterMessage(QromaCommHeartbeatResponse)
 
 QromaCommResponse = _reflection.GeneratedProtocolMessageType('QromaCommResponse', (_message.Message,), {
   'DESCRIPTOR' : _QROMACOMMRESPONSE,

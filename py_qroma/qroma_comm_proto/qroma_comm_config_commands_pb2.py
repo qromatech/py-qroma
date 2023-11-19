@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from . import qroma_types_pb2 as qroma__types__pb2
+import qroma_types_pb2 as qroma__types__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,11 +20,43 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n qroma-comm-config-commands.proto\x1a\x11qroma-types.proto\"0\n\x0bSetLogLevel\x12!\n\x08logLevel\x18\x01 \x01(\x0e\x32\x0f.Qroma_LogLevel\"H\n\x16QromaCommConfigCommand\x12#\n\x0bsetLogLevel\x18\x01 \x01(\x0b\x32\x0c.SetLogLevelH\x00\x42\t\n\x07\x63ommandb\x06proto3'
+  serialized_pb=b'\n qroma-comm-config-commands.proto\x1a\x11qroma-types.proto\"*\n\x16RequestQromaCommConfig\x12\x10\n\x08ignoreMe\x18\x01 \x01(\r\"0\n\x0bSetLogLevel\x12!\n\x08logLevel\x18\x01 \x01(\x0e\x32\x0f.Qroma_LogLevel\"5\n\x14SetHeartbeatInterval\x12\x1d\n\x15heartbeatIntervalInMs\x18\x01 \x01(\r\"\xba\x01\n\x16QromaCommConfigCommand\x12\x39\n\x16requestQromaCommConfig\x18\x01 \x01(\x0b\x32\x17.RequestQromaCommConfigH\x00\x12#\n\x0bsetLogLevel\x18\x02 \x01(\x0b\x32\x0c.SetLogLevelH\x00\x12\x35\n\x14setHeartbeatInterval\x18\x03 \x01(\x0b\x32\x15.SetHeartbeatIntervalH\x00\x42\t\n\x07\x63ommand\"[\n\x17QromaCommConfigResponse\x12!\n\x08logLevel\x18\x01 \x01(\x0e\x32\x0f.Qroma_LogLevel\x12\x1d\n\x15heartbeatIntervalInMs\x18\x02 \x01(\rb\x06proto3'
   ,
   dependencies=[qroma__types__pb2.DESCRIPTOR,])
 
 
+
+
+_REQUESTQROMACOMMCONFIG = _descriptor.Descriptor(
+  name='RequestQromaCommConfig',
+  full_name='RequestQromaCommConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ignoreMe', full_name='RequestQromaCommConfig.ignoreMe', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=55,
+  serialized_end=97,
+)
 
 
 _SETLOGLEVEL = _descriptor.Descriptor(
@@ -54,8 +86,40 @@ _SETLOGLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=55,
-  serialized_end=103,
+  serialized_start=99,
+  serialized_end=147,
+)
+
+
+_SETHEARTBEATINTERVAL = _descriptor.Descriptor(
+  name='SetHeartbeatInterval',
+  full_name='SetHeartbeatInterval',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='heartbeatIntervalInMs', full_name='SetHeartbeatInterval.heartbeatIntervalInMs', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=149,
+  serialized_end=202,
 )
 
 
@@ -68,8 +132,22 @@ _QROMACOMMCONFIGCOMMAND = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='setLogLevel', full_name='QromaCommConfigCommand.setLogLevel', index=0,
+      name='requestQromaCommConfig', full_name='QromaCommConfigCommand.requestQromaCommConfig', index=0,
       number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setLogLevel', full_name='QromaCommConfigCommand.setLogLevel', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setHeartbeatInterval', full_name='QromaCommConfigCommand.setHeartbeatInterval', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -91,18 +169,76 @@ _QROMACOMMCONFIGCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=105,
-  serialized_end=177,
+  serialized_start=205,
+  serialized_end=391,
+)
+
+
+_QROMACOMMCONFIGRESPONSE = _descriptor.Descriptor(
+  name='QromaCommConfigResponse',
+  full_name='QromaCommConfigResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='logLevel', full_name='QromaCommConfigResponse.logLevel', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='heartbeatIntervalInMs', full_name='QromaCommConfigResponse.heartbeatIntervalInMs', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=393,
+  serialized_end=484,
 )
 
 _SETLOGLEVEL.fields_by_name['logLevel'].enum_type = qroma__types__pb2._QROMA_LOGLEVEL
+_QROMACOMMCONFIGCOMMAND.fields_by_name['requestQromaCommConfig'].message_type = _REQUESTQROMACOMMCONFIG
 _QROMACOMMCONFIGCOMMAND.fields_by_name['setLogLevel'].message_type = _SETLOGLEVEL
+_QROMACOMMCONFIGCOMMAND.fields_by_name['setHeartbeatInterval'].message_type = _SETHEARTBEATINTERVAL
+_QROMACOMMCONFIGCOMMAND.oneofs_by_name['command'].fields.append(
+  _QROMACOMMCONFIGCOMMAND.fields_by_name['requestQromaCommConfig'])
+_QROMACOMMCONFIGCOMMAND.fields_by_name['requestQromaCommConfig'].containing_oneof = _QROMACOMMCONFIGCOMMAND.oneofs_by_name['command']
 _QROMACOMMCONFIGCOMMAND.oneofs_by_name['command'].fields.append(
   _QROMACOMMCONFIGCOMMAND.fields_by_name['setLogLevel'])
 _QROMACOMMCONFIGCOMMAND.fields_by_name['setLogLevel'].containing_oneof = _QROMACOMMCONFIGCOMMAND.oneofs_by_name['command']
+_QROMACOMMCONFIGCOMMAND.oneofs_by_name['command'].fields.append(
+  _QROMACOMMCONFIGCOMMAND.fields_by_name['setHeartbeatInterval'])
+_QROMACOMMCONFIGCOMMAND.fields_by_name['setHeartbeatInterval'].containing_oneof = _QROMACOMMCONFIGCOMMAND.oneofs_by_name['command']
+_QROMACOMMCONFIGRESPONSE.fields_by_name['logLevel'].enum_type = qroma__types__pb2._QROMA_LOGLEVEL
+DESCRIPTOR.message_types_by_name['RequestQromaCommConfig'] = _REQUESTQROMACOMMCONFIG
 DESCRIPTOR.message_types_by_name['SetLogLevel'] = _SETLOGLEVEL
+DESCRIPTOR.message_types_by_name['SetHeartbeatInterval'] = _SETHEARTBEATINTERVAL
 DESCRIPTOR.message_types_by_name['QromaCommConfigCommand'] = _QROMACOMMCONFIGCOMMAND
+DESCRIPTOR.message_types_by_name['QromaCommConfigResponse'] = _QROMACOMMCONFIGRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+RequestQromaCommConfig = _reflection.GeneratedProtocolMessageType('RequestQromaCommConfig', (_message.Message,), {
+  'DESCRIPTOR' : _REQUESTQROMACOMMCONFIG,
+  '__module__' : 'qroma_comm_config_commands_pb2'
+  # @@protoc_insertion_point(class_scope:RequestQromaCommConfig)
+  })
+_sym_db.RegisterMessage(RequestQromaCommConfig)
 
 SetLogLevel = _reflection.GeneratedProtocolMessageType('SetLogLevel', (_message.Message,), {
   'DESCRIPTOR' : _SETLOGLEVEL,
@@ -111,12 +247,26 @@ SetLogLevel = _reflection.GeneratedProtocolMessageType('SetLogLevel', (_message.
   })
 _sym_db.RegisterMessage(SetLogLevel)
 
+SetHeartbeatInterval = _reflection.GeneratedProtocolMessageType('SetHeartbeatInterval', (_message.Message,), {
+  'DESCRIPTOR' : _SETHEARTBEATINTERVAL,
+  '__module__' : 'qroma_comm_config_commands_pb2'
+  # @@protoc_insertion_point(class_scope:SetHeartbeatInterval)
+  })
+_sym_db.RegisterMessage(SetHeartbeatInterval)
+
 QromaCommConfigCommand = _reflection.GeneratedProtocolMessageType('QromaCommConfigCommand', (_message.Message,), {
   'DESCRIPTOR' : _QROMACOMMCONFIGCOMMAND,
   '__module__' : 'qroma_comm_config_commands_pb2'
   # @@protoc_insertion_point(class_scope:QromaCommConfigCommand)
   })
 _sym_db.RegisterMessage(QromaCommConfigCommand)
+
+QromaCommConfigResponse = _reflection.GeneratedProtocolMessageType('QromaCommConfigResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QROMACOMMCONFIGRESPONSE,
+  '__module__' : 'qroma_comm_config_commands_pb2'
+  # @@protoc_insertion_point(class_scope:QromaCommConfigResponse)
+  })
+_sym_db.RegisterMessage(QromaCommConfigResponse)
 
 
 # @@protoc_insertion_point(module_scope)

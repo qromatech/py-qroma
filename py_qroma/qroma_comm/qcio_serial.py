@@ -40,7 +40,7 @@ class QcioSerial(qcio_base.QcioBase):
             self.ser.write(the_bytes)
             self.ser.flush()
 
-        send_count = 1000
+        send_count = 200
         sleep_duration = 0.03
 
         bytes_to_send = cmd_bytes[:]
@@ -49,7 +49,7 @@ class QcioSerial(qcio_base.QcioBase):
             the_bytes = bytes_to_send[0:send_count]
             do_send(the_bytes)
             bytes_to_send = bytes_to_send[send_count:]
-            time.sleep(sleep_duration)
+            await asyncio.sleep(sleep_duration)
 
         if len(bytes_to_send) > 0:
             do_send(bytes_to_send)

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x66ile-system-commands.proto\x1a\x11qroma-types.proto\"L\n\x07\x44irItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x0b\x64irItemType\x18\x02 \x01(\x0e\x32\x0c.DirItemType\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\r\"!\n\rRmFileCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"H\n\x0eRmFileResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12%\n\rrmFileCommand\x18\x02 \x01(\x0b\x32\x0e.RmFileCommand\"\x1f\n\x0cRmDirCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"E\n\rRmDirResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12#\n\x0crmDirCommand\x18\x02 \x01(\x0b\x32\r.RmDirCommand\"\x1f\n\x0cMkDirCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"E\n\rMkDirResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12#\n\x0cmkDirCommand\x18\x02 \x01(\x0b\x32\r.MkDirCommand\")\n\x15ReportFileDataCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"]\n\x16ReportFileDataResponse\x12&\n\nfileStatus\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\"c\n\x16ListDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x1c\n\x14startsWithConstraint\x18\x02 \x01(\t\x12\x1a\n\x12\x65ndsWithConstraint\x18\x03 \x01(\t\"W\n\x17ListDirContentsResponse\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x1a\n\x08\x64irItems\x18\x03 \x03(\x0b\x32\x08.DirItem\"*\n\x17PrintDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"\'\n\x16ResetFilesystemCommand\x12\r\n\x05\x64ummy\x18\x01 \x01(\x08\"*\n\x17ResetFilesystemResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"*\n\x16GetFileContentsCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"q\n\x17GetFileContentsResponse\x12&\n\nstatusCode\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x03 \x01(\x0c\"F\n\x14WriteFileDataCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x02 \x01(\x0c\"a\n\x15WriteFileDataResponse\x12,\n\nstatusCode\x18\x01 \x01(\x0e\x32\x18.WriteFileDataStatusCode\x12\x1a\n\x07\x63ommand\x18\x02 \x01(\x0b\x32\t.FileData\"\xb6\x03\n\x11\x46ileSystemCommand\x12\x39\n\x16getFileContentsCommand\x18\x01 \x01(\x0b\x32\x17.GetFileContentsCommandH\x00\x12\x35\n\x14writeFileDataCommand\x18\x02 \x01(\x0b\x32\x15.WriteFileDataCommandH\x00\x12\x37\n\x15reportFileDataCommand\x18\x04 \x01(\x0b\x32\x16.ReportFileDataCommandH\x00\x12\'\n\rrmFileCommand\x18\x05 \x01(\x0b\x32\x0e.RmFileCommandH\x00\x12\x39\n\x16listDirContentsCommand\x18\t \x01(\x0b\x32\x17.ListDirContentsCommandH\x00\x12%\n\x0cmkDirCommand\x18\n \x01(\x0b\x32\r.MkDirCommandH\x00\x12%\n\x0crmDirCommand\x18\x0b \x01(\x0b\x32\r.RmDirCommandH\x00\x12\x39\n\x16resetFilesystemCommand\x18\x0f \x01(\x0b\x32\x17.ResetFilesystemCommandH\x00\x42\t\n\x07\x63ommand\"\xc7\x03\n\x12\x46ileSystemResponse\x12;\n\x17getFileContentsResponse\x18\x01 \x01(\x0b\x32\x18.GetFileContentsResponseH\x00\x12\x37\n\x15writeFileDataResponse\x18\x02 \x01(\x0b\x32\x16.WriteFileDataResponseH\x00\x12\x39\n\x16reportFileDataResponse\x18\x04 \x01(\x0b\x32\x17.ReportFileDataResponseH\x00\x12(\n\rrmFileCommand\x18\x05 \x01(\x0b\x32\x0f.RmFileResponseH\x00\x12;\n\x17listDirContentsResponse\x18\t \x01(\x0b\x32\x18.ListDirContentsResponseH\x00\x12\'\n\rmkDirResponse\x18\n \x01(\x0b\x32\x0e.MkDirResponseH\x00\x12\'\n\rrmDirResponse\x18\x0b \x01(\x0b\x32\x0e.RmDirResponseH\x00\x12;\n\x17resetFilesystemResponse\x18\x0f \x01(\x0b\x32\x18.ResetFilesystemResponseH\x00\x42\n\n\x08response*9\n\x0b\x44irItemType\x12\x0f\n\x0b\x44IT_NOT_SET\x10\x00\x12\x0c\n\x08\x44IT_FILE\x10\x01\x12\x0b\n\x07\x44IT_DIR\x10\x02*s\n\x11GetFileStatusCode\x12\x10\n\x0cGFSC_NOT_SET\x10\x00\x12\x14\n\x10GFSC_FILE_EXISTS\x10\x01\x12\x16\n\x12GFSC_ERR_OPEN_FILE\x10\x02\x12\x1e\n\x1aGFSC_ERR_INVALID_FILE_PATH\x10\x03*t\n\x17WriteFileDataStatusCode\x12\x11\n\rWFDSC_NOT_SET\x10\x00\x12\x11\n\rWFDSC_SUCCESS\x10\x01\x12\x17\n\x13WFDSC_ERR_OPEN_FILE\x10\x02\x12\x1a\n\x16WFDSC_ERR_CRC_MISMATCH\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\x1a\x66ile-system-commands.proto\x1a\x11qroma-types.proto\"L\n\x07\x44irItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12!\n\x0b\x64irItemType\x18\x02 \x01(\x0e\x32\x0c.DirItemType\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\r\"!\n\rRmFileCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"H\n\x0eRmFileResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12%\n\rrmFileCommand\x18\x02 \x01(\x0b\x32\x0e.RmFileCommand\"\x1f\n\x0cRmDirCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"E\n\rRmDirResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12#\n\x0crmDirCommand\x18\x02 \x01(\x0b\x32\r.RmDirCommand\"\x1f\n\x0cMkDirCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"E\n\rMkDirResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12#\n\x0cmkDirCommand\x18\x02 \x01(\x0b\x32\r.MkDirCommand\")\n\x15ReportFileDataCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"]\n\x16ReportFileDataResponse\x12&\n\nfileStatus\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\"c\n\x16ListDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x1c\n\x14startsWithConstraint\x18\x02 \x01(\t\x12\x1a\n\x12\x65ndsWithConstraint\x18\x03 \x01(\t\"W\n\x17ListDirContentsResponse\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08\x12\x1a\n\x08\x64irItems\x18\x03 \x03(\x0b\x32\x08.DirItem\"*\n\x17PrintDirContentsCommand\x12\x0f\n\x07\x64irPath\x18\x01 \x01(\t\"\'\n\x16ResetFilesystemCommand\x12\r\n\x05\x64ummy\x18\x01 \x01(\x08\"*\n\x17ResetFilesystemResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"*\n\x16GetFileContentsCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\"q\n\x17GetFileContentsResponse\x12&\n\nstatusCode\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x1b\n\x08\x66ileData\x18\x02 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x03 \x01(\x0c\"F\n\x14WriteFileDataCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\x12\x11\n\tfileBytes\x18\x02 \x01(\x0c\"a\n\x15WriteFileDataResponse\x12,\n\nstatusCode\x18\x01 \x01(\x0e\x32\x18.WriteFileDataStatusCode\x12\x1a\n\x07\x63ommand\x18\x02 \x01(\x0b\x32\t.FileData\"\xb6\x03\n\x11\x46ileSystemCommand\x12\x39\n\x16getFileContentsCommand\x18\x01 \x01(\x0b\x32\x17.GetFileContentsCommandH\x00\x12\x35\n\x14writeFileDataCommand\x18\x02 \x01(\x0b\x32\x15.WriteFileDataCommandH\x00\x12\x37\n\x15reportFileDataCommand\x18\x04 \x01(\x0b\x32\x16.ReportFileDataCommandH\x00\x12\'\n\rrmFileCommand\x18\x05 \x01(\x0b\x32\x0e.RmFileCommandH\x00\x12\x39\n\x16listDirContentsCommand\x18\t \x01(\x0b\x32\x17.ListDirContentsCommandH\x00\x12%\n\x0cmkDirCommand\x18\n \x01(\x0b\x32\r.MkDirCommandH\x00\x12%\n\x0crmDirCommand\x18\x0b \x01(\x0b\x32\r.RmDirCommandH\x00\x12\x39\n\x16resetFilesystemCommand\x18\x0f \x01(\x0b\x32\x17.ResetFilesystemCommandH\x00\x42\t\n\x07\x63ommand\"\xc7\x03\n\x12\x46ileSystemResponse\x12;\n\x17getFileContentsResponse\x18\x01 \x01(\x0b\x32\x18.GetFileContentsResponseH\x00\x12\x37\n\x15writeFileDataResponse\x18\x02 \x01(\x0b\x32\x16.WriteFileDataResponseH\x00\x12\x39\n\x16reportFileDataResponse\x18\x04 \x01(\x0b\x32\x17.ReportFileDataResponseH\x00\x12(\n\rrmFileCommand\x18\x05 \x01(\x0b\x32\x0f.RmFileResponseH\x00\x12;\n\x17listDirContentsResponse\x18\t \x01(\x0b\x32\x18.ListDirContentsResponseH\x00\x12\'\n\rmkDirResponse\x18\n \x01(\x0b\x32\x0e.MkDirResponseH\x00\x12\'\n\rrmDirResponse\x18\x0b \x01(\x0b\x32\x0e.RmDirResponseH\x00\x12;\n\x17resetFilesystemResponse\x18\x0f \x01(\x0b\x32\x18.ResetFilesystemResponseH\x00\x42\n\n\x08response*9\n\x0b\x44irItemType\x12\x0f\n\x0b\x44IT_NOT_SET\x10\x00\x12\x0c\n\x08\x44IT_FILE\x10\x01\x12\x0b\n\x07\x44IT_DIR\x10\x02*t\n\x17WriteFileDataStatusCode\x12\x11\n\rWFDSC_NOT_SET\x10\x00\x12\x11\n\rWFDSC_SUCCESS\x10\x01\x12\x17\n\x13WFDSC_ERR_OPEN_FILE\x10\x02\x12\x1a\n\x16WFDSC_ERR_CRC_MISMATCH\x10\x03\x62\x06proto3'
   ,
   dependencies=[qroma__types__pb2.DESCRIPTOR,])
 
@@ -56,42 +56,6 @@ _DIRITEMTYPE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_DIRITEMTYPE)
 
 DirItemType = enum_type_wrapper.EnumTypeWrapper(_DIRITEMTYPE)
-_GETFILESTATUSCODE = _descriptor.EnumDescriptor(
-  name='GetFileStatusCode',
-  full_name='GetFileStatusCode',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='GFSC_NOT_SET', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='GFSC_FILE_EXISTS', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='GFSC_ERR_OPEN_FILE', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='GFSC_ERR_INVALID_FILE_PATH', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=2189,
-  serialized_end=2304,
-)
-_sym_db.RegisterEnumDescriptor(_GETFILESTATUSCODE)
-
-GetFileStatusCode = enum_type_wrapper.EnumTypeWrapper(_GETFILESTATUSCODE)
 _WRITEFILEDATASTATUSCODE = _descriptor.EnumDescriptor(
   name='WriteFileDataStatusCode',
   full_name='WriteFileDataStatusCode',
@@ -122,8 +86,8 @@ _WRITEFILEDATASTATUSCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2306,
-  serialized_end=2422,
+  serialized_start=2189,
+  serialized_end=2305,
 )
 _sym_db.RegisterEnumDescriptor(_WRITEFILEDATASTATUSCODE)
 
@@ -131,10 +95,6 @@ WriteFileDataStatusCode = enum_type_wrapper.EnumTypeWrapper(_WRITEFILEDATASTATUS
 DIT_NOT_SET = 0
 DIT_FILE = 1
 DIT_DIR = 2
-GFSC_NOT_SET = 0
-GFSC_FILE_EXISTS = 1
-GFSC_ERR_OPEN_FILE = 2
-GFSC_ERR_INVALID_FILE_PATH = 3
 WFDSC_NOT_SET = 0
 WFDSC_SUCCESS = 1
 WFDSC_ERR_OPEN_FILE = 2
@@ -991,10 +951,10 @@ _DIRITEM.fields_by_name['dirItemType'].enum_type = _DIRITEMTYPE
 _RMFILERESPONSE.fields_by_name['rmFileCommand'].message_type = _RMFILECOMMAND
 _RMDIRRESPONSE.fields_by_name['rmDirCommand'].message_type = _RMDIRCOMMAND
 _MKDIRRESPONSE.fields_by_name['mkDirCommand'].message_type = _MKDIRCOMMAND
-_REPORTFILEDATARESPONSE.fields_by_name['fileStatus'].enum_type = _GETFILESTATUSCODE
+_REPORTFILEDATARESPONSE.fields_by_name['fileStatus'].enum_type = qroma__types__pb2._GETFILESTATUSCODE
 _REPORTFILEDATARESPONSE.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
 _LISTDIRCONTENTSRESPONSE.fields_by_name['dirItems'].message_type = _DIRITEM
-_GETFILECONTENTSRESPONSE.fields_by_name['statusCode'].enum_type = _GETFILESTATUSCODE
+_GETFILECONTENTSRESPONSE.fields_by_name['statusCode'].enum_type = qroma__types__pb2._GETFILESTATUSCODE
 _GETFILECONTENTSRESPONSE.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
 _WRITEFILEDATACOMMAND.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
 _WRITEFILEDATARESPONSE.fields_by_name['statusCode'].enum_type = _WRITEFILEDATASTATUSCODE
@@ -1084,7 +1044,6 @@ DESCRIPTOR.message_types_by_name['WriteFileDataResponse'] = _WRITEFILEDATARESPON
 DESCRIPTOR.message_types_by_name['FileSystemCommand'] = _FILESYSTEMCOMMAND
 DESCRIPTOR.message_types_by_name['FileSystemResponse'] = _FILESYSTEMRESPONSE
 DESCRIPTOR.enum_types_by_name['DirItemType'] = _DIRITEMTYPE
-DESCRIPTOR.enum_types_by_name['GetFileStatusCode'] = _GETFILESTATUSCODE
 DESCRIPTOR.enum_types_by_name['WriteFileDataStatusCode'] = _WRITEFILEDATASTATUSCODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

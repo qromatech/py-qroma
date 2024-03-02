@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13qroma-streams.proto\x1a\x11qroma-types.proto\"O\n\x1aInitWriteFileStreamCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\"X\n\x1eInitWriteFileStreamAckResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\x12\x0f\n\x07message\x18\x03 \x01(\t\"v\n\x1fWriteFileStreamCompleteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x1b\n\x08\x66ileData\x18\x04 \x01(\x0b\x32\t.FileData\"b\n\x12QromaStreamCommand\x12\x41\n\x1ainitWriteFileStreamCommand\x18\x01 \x01(\x0b\x32\x1b.InitWriteFileStreamCommandH\x00\x42\t\n\x07\x63ommand\"\xb9\x01\n\x13QromaStreamResponse\x12I\n\x1einitWriteFileStreamAckResponse\x18\x01 \x01(\x0b\x32\x1f.InitWriteFileStreamAckResponseH\x00\x12K\n\x1fwriteFileStreamCompleteResponse\x18\x02 \x01(\x0b\x32 .WriteFileStreamCompleteResponseH\x00\x42\n\n\x08responseb\x06proto3'
+  serialized_pb=b'\n\x13qroma-streams.proto\x1a\x11qroma-types.proto\"O\n\x1aInitWriteFileStreamCommand\x12\x1b\n\x08\x66ileData\x18\x01 \x01(\x0b\x32\t.FileData\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\"X\n\x1eInitWriteFileStreamAckResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\x12\x0f\n\x07message\x18\x03 \x01(\t\"v\n\x1fWriteFileStreamCompleteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x1b\n\x08\x66ileData\x18\x04 \x01(\x0b\x32\t.FileData\"C\n\x19InitReadFileStreamCommand\x12\x10\n\x08\x66ilePath\x18\x01 \x01(\t\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\"\x8b\x01\n\x1dInitReadFileStreamAckResponse\x12&\n\nfileStatus\x18\x01 \x01(\x0e\x32\x12.GetFileStatusCode\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x1b\n\x08\x66ileData\x18\x04 \x01(\x0b\x32\t.FileData\"u\n\x1eReadFileStreamCompleteResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x14\n\x0c\x66ileStreamId\x18\x02 \x01(\r\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x1b\n\x08\x66ileData\x18\x04 \x01(\x0b\x32\t.FileData\"\xa3\x01\n\x12QromaStreamCommand\x12\x41\n\x1ainitWriteFileStreamCommand\x18\x01 \x01(\x0b\x32\x1b.InitWriteFileStreamCommandH\x00\x12?\n\x19initReadFileStreamCommand\x18\x02 \x01(\x0b\x32\x1a.InitReadFileStreamCommandH\x00\x42\t\n\x07\x63ommand\"\xcd\x02\n\x13QromaStreamResponse\x12I\n\x1einitWriteFileStreamAckResponse\x18\x01 \x01(\x0b\x32\x1f.InitWriteFileStreamAckResponseH\x00\x12K\n\x1fwriteFileStreamCompleteResponse\x18\x02 \x01(\x0b\x32 .WriteFileStreamCompleteResponseH\x00\x12G\n\x1dinitReadFileStreamAckResponse\x18\x03 \x01(\x0b\x32\x1e.InitReadFileStreamAckResponseH\x00\x12I\n\x1ereadFileStreamCompleteResponse\x18\x04 \x01(\x0b\x32\x1f.ReadFileStreamCompleteResponseH\x00\x42\n\n\x08responseb\x06proto3'
   ,
   dependencies=[qroma__types__pb2.DESCRIPTOR,])
 
@@ -165,6 +165,151 @@ _WRITEFILESTREAMCOMPLETERESPONSE = _descriptor.Descriptor(
 )
 
 
+_INITREADFILESTREAMCOMMAND = _descriptor.Descriptor(
+  name='InitReadFileStreamCommand',
+  full_name='InitReadFileStreamCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='filePath', full_name='InitReadFileStreamCommand.filePath', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fileStreamId', full_name='InitReadFileStreamCommand.fileStreamId', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=333,
+  serialized_end=400,
+)
+
+
+_INITREADFILESTREAMACKRESPONSE = _descriptor.Descriptor(
+  name='InitReadFileStreamAckResponse',
+  full_name='InitReadFileStreamAckResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='fileStatus', full_name='InitReadFileStreamAckResponse.fileStatus', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fileStreamId', full_name='InitReadFileStreamAckResponse.fileStreamId', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='InitReadFileStreamAckResponse.message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fileData', full_name='InitReadFileStreamAckResponse.fileData', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=403,
+  serialized_end=542,
+)
+
+
+_READFILESTREAMCOMPLETERESPONSE = _descriptor.Descriptor(
+  name='ReadFileStreamCompleteResponse',
+  full_name='ReadFileStreamCompleteResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='ReadFileStreamCompleteResponse.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fileStreamId', full_name='ReadFileStreamCompleteResponse.fileStreamId', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='ReadFileStreamCompleteResponse.message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fileData', full_name='ReadFileStreamCompleteResponse.fileData', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=544,
+  serialized_end=661,
+)
+
+
 _QROMASTREAMCOMMAND = _descriptor.Descriptor(
   name='QromaStreamCommand',
   full_name='QromaStreamCommand',
@@ -176,6 +321,13 @@ _QROMASTREAMCOMMAND = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='initWriteFileStreamCommand', full_name='QromaStreamCommand.initWriteFileStreamCommand', index=0,
       number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='initReadFileStreamCommand', full_name='QromaStreamCommand.initReadFileStreamCommand', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -197,8 +349,8 @@ _QROMASTREAMCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=333,
-  serialized_end=431,
+  serialized_start=664,
+  serialized_end=827,
 )
 
 
@@ -224,6 +376,20 @@ _QROMASTREAMRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='initReadFileStreamAckResponse', full_name='QromaStreamResponse.initReadFileStreamAckResponse', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='readFileStreamCompleteResponse', full_name='QromaStreamResponse.readFileStreamCompleteResponse', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -241,27 +407,45 @@ _QROMASTREAMRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=434,
-  serialized_end=619,
+  serialized_start=830,
+  serialized_end=1163,
 )
 
 _INITWRITEFILESTREAMCOMMAND.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
 _WRITEFILESTREAMCOMPLETERESPONSE.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
+_INITREADFILESTREAMACKRESPONSE.fields_by_name['fileStatus'].enum_type = qroma__types__pb2._GETFILESTATUSCODE
+_INITREADFILESTREAMACKRESPONSE.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
+_READFILESTREAMCOMPLETERESPONSE.fields_by_name['fileData'].message_type = qroma__types__pb2._FILEDATA
 _QROMASTREAMCOMMAND.fields_by_name['initWriteFileStreamCommand'].message_type = _INITWRITEFILESTREAMCOMMAND
+_QROMASTREAMCOMMAND.fields_by_name['initReadFileStreamCommand'].message_type = _INITREADFILESTREAMCOMMAND
 _QROMASTREAMCOMMAND.oneofs_by_name['command'].fields.append(
   _QROMASTREAMCOMMAND.fields_by_name['initWriteFileStreamCommand'])
 _QROMASTREAMCOMMAND.fields_by_name['initWriteFileStreamCommand'].containing_oneof = _QROMASTREAMCOMMAND.oneofs_by_name['command']
+_QROMASTREAMCOMMAND.oneofs_by_name['command'].fields.append(
+  _QROMASTREAMCOMMAND.fields_by_name['initReadFileStreamCommand'])
+_QROMASTREAMCOMMAND.fields_by_name['initReadFileStreamCommand'].containing_oneof = _QROMASTREAMCOMMAND.oneofs_by_name['command']
 _QROMASTREAMRESPONSE.fields_by_name['initWriteFileStreamAckResponse'].message_type = _INITWRITEFILESTREAMACKRESPONSE
 _QROMASTREAMRESPONSE.fields_by_name['writeFileStreamCompleteResponse'].message_type = _WRITEFILESTREAMCOMPLETERESPONSE
+_QROMASTREAMRESPONSE.fields_by_name['initReadFileStreamAckResponse'].message_type = _INITREADFILESTREAMACKRESPONSE
+_QROMASTREAMRESPONSE.fields_by_name['readFileStreamCompleteResponse'].message_type = _READFILESTREAMCOMPLETERESPONSE
 _QROMASTREAMRESPONSE.oneofs_by_name['response'].fields.append(
   _QROMASTREAMRESPONSE.fields_by_name['initWriteFileStreamAckResponse'])
 _QROMASTREAMRESPONSE.fields_by_name['initWriteFileStreamAckResponse'].containing_oneof = _QROMASTREAMRESPONSE.oneofs_by_name['response']
 _QROMASTREAMRESPONSE.oneofs_by_name['response'].fields.append(
   _QROMASTREAMRESPONSE.fields_by_name['writeFileStreamCompleteResponse'])
 _QROMASTREAMRESPONSE.fields_by_name['writeFileStreamCompleteResponse'].containing_oneof = _QROMASTREAMRESPONSE.oneofs_by_name['response']
+_QROMASTREAMRESPONSE.oneofs_by_name['response'].fields.append(
+  _QROMASTREAMRESPONSE.fields_by_name['initReadFileStreamAckResponse'])
+_QROMASTREAMRESPONSE.fields_by_name['initReadFileStreamAckResponse'].containing_oneof = _QROMASTREAMRESPONSE.oneofs_by_name['response']
+_QROMASTREAMRESPONSE.oneofs_by_name['response'].fields.append(
+  _QROMASTREAMRESPONSE.fields_by_name['readFileStreamCompleteResponse'])
+_QROMASTREAMRESPONSE.fields_by_name['readFileStreamCompleteResponse'].containing_oneof = _QROMASTREAMRESPONSE.oneofs_by_name['response']
 DESCRIPTOR.message_types_by_name['InitWriteFileStreamCommand'] = _INITWRITEFILESTREAMCOMMAND
 DESCRIPTOR.message_types_by_name['InitWriteFileStreamAckResponse'] = _INITWRITEFILESTREAMACKRESPONSE
 DESCRIPTOR.message_types_by_name['WriteFileStreamCompleteResponse'] = _WRITEFILESTREAMCOMPLETERESPONSE
+DESCRIPTOR.message_types_by_name['InitReadFileStreamCommand'] = _INITREADFILESTREAMCOMMAND
+DESCRIPTOR.message_types_by_name['InitReadFileStreamAckResponse'] = _INITREADFILESTREAMACKRESPONSE
+DESCRIPTOR.message_types_by_name['ReadFileStreamCompleteResponse'] = _READFILESTREAMCOMPLETERESPONSE
 DESCRIPTOR.message_types_by_name['QromaStreamCommand'] = _QROMASTREAMCOMMAND
 DESCRIPTOR.message_types_by_name['QromaStreamResponse'] = _QROMASTREAMRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -286,6 +470,27 @@ WriteFileStreamCompleteResponse = _reflection.GeneratedProtocolMessageType('Writ
   # @@protoc_insertion_point(class_scope:WriteFileStreamCompleteResponse)
   })
 _sym_db.RegisterMessage(WriteFileStreamCompleteResponse)
+
+InitReadFileStreamCommand = _reflection.GeneratedProtocolMessageType('InitReadFileStreamCommand', (_message.Message,), {
+  'DESCRIPTOR' : _INITREADFILESTREAMCOMMAND,
+  '__module__' : 'qroma_streams_pb2'
+  # @@protoc_insertion_point(class_scope:InitReadFileStreamCommand)
+  })
+_sym_db.RegisterMessage(InitReadFileStreamCommand)
+
+InitReadFileStreamAckResponse = _reflection.GeneratedProtocolMessageType('InitReadFileStreamAckResponse', (_message.Message,), {
+  'DESCRIPTOR' : _INITREADFILESTREAMACKRESPONSE,
+  '__module__' : 'qroma_streams_pb2'
+  # @@protoc_insertion_point(class_scope:InitReadFileStreamAckResponse)
+  })
+_sym_db.RegisterMessage(InitReadFileStreamAckResponse)
+
+ReadFileStreamCompleteResponse = _reflection.GeneratedProtocolMessageType('ReadFileStreamCompleteResponse', (_message.Message,), {
+  'DESCRIPTOR' : _READFILESTREAMCOMPLETERESPONSE,
+  '__module__' : 'qroma_streams_pb2'
+  # @@protoc_insertion_point(class_scope:ReadFileStreamCompleteResponse)
+  })
+_sym_db.RegisterMessage(ReadFileStreamCompleteResponse)
 
 QromaStreamCommand = _reflection.GeneratedProtocolMessageType('QromaStreamCommand', (_message.Message,), {
   'DESCRIPTOR' : _QROMASTREAMCOMMAND,

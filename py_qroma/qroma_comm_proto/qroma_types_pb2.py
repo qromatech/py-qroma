@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11qroma-types.proto\"1\n\x10Qroma_LogMessage\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t\"@\n\x08\x46ileData\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x66ilesize\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r*`\n\x0eQroma_LogLevel\x12\x10\n\x0cLogLevel_All\x10\x00\x12\x11\n\rLogLevel_Info\x10\n\x12\x12\n\x0eLogLevel_Error\x10\x64\x12\x15\n\x10LogLevel_Nothing\x10\xff\x01*\xac\x01\n\x13Qroma_DebugCommMode\x12\x18\n\x14\x44\x65\x62ugCommMode_NotSet\x10\x00\x12\x16\n\x12\x44\x65\x62ugCommMode_None\x10\x01\x12\x1c\n\x18\x44\x65\x62ugCommMode_SerialOnly\x10\x02\x12\x1f\n\x1b\x44\x65\x62ugCommMode_BluetoothOnly\x10\x03\x12$\n DebugCommMode_SerialAndBluetooth\x10\x04\x62\x06proto3'
+  serialized_pb=b'\n\x11qroma-types.proto\"1\n\x10Qroma_LogMessage\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t\"@\n\x08\x46ileData\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x66ilesize\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r*`\n\x0eQroma_LogLevel\x12\x10\n\x0cLogLevel_All\x10\x00\x12\x11\n\rLogLevel_Info\x10\n\x12\x12\n\x0eLogLevel_Error\x10\x64\x12\x15\n\x10LogLevel_Nothing\x10\xff\x01*\xac\x01\n\x13Qroma_DebugCommMode\x12\x18\n\x14\x44\x65\x62ugCommMode_NotSet\x10\x00\x12\x16\n\x12\x44\x65\x62ugCommMode_None\x10\x01\x12\x1c\n\x18\x44\x65\x62ugCommMode_SerialOnly\x10\x02\x12\x1f\n\x1b\x44\x65\x62ugCommMode_BluetoothOnly\x10\x03\x12$\n DebugCommMode_SerialAndBluetooth\x10\x04*s\n\x11GetFileStatusCode\x12\x10\n\x0cGFSC_NOT_SET\x10\x00\x12\x14\n\x10GFSC_FILE_EXISTS\x10\x01\x12\x16\n\x12GFSC_ERR_OPEN_FILE\x10\x02\x12\x1e\n\x1aGFSC_ERR_INVALID_FILE_PATH\x10\x03\x62\x06proto3'
 )
 
 _QROMA_LOGLEVEL = _descriptor.EnumDescriptor(
@@ -100,6 +100,42 @@ _QROMA_DEBUGCOMMMODE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_QROMA_DEBUGCOMMMODE)
 
 Qroma_DebugCommMode = enum_type_wrapper.EnumTypeWrapper(_QROMA_DEBUGCOMMMODE)
+_GETFILESTATUSCODE = _descriptor.EnumDescriptor(
+  name='GetFileStatusCode',
+  full_name='GetFileStatusCode',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='GFSC_NOT_SET', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GFSC_FILE_EXISTS', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GFSC_ERR_OPEN_FILE', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GFSC_ERR_INVALID_FILE_PATH', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=411,
+  serialized_end=526,
+)
+_sym_db.RegisterEnumDescriptor(_GETFILESTATUSCODE)
+
+GetFileStatusCode = enum_type_wrapper.EnumTypeWrapper(_GETFILESTATUSCODE)
 LogLevel_All = 0
 LogLevel_Info = 10
 LogLevel_Error = 100
@@ -109,6 +145,10 @@ DebugCommMode_None = 1
 DebugCommMode_SerialOnly = 2
 DebugCommMode_BluetoothOnly = 3
 DebugCommMode_SerialAndBluetooth = 4
+GFSC_NOT_SET = 0
+GFSC_FILE_EXISTS = 1
+GFSC_ERR_OPEN_FILE = 2
+GFSC_ERR_INVALID_FILE_PATH = 3
 
 
 
@@ -200,6 +240,7 @@ DESCRIPTOR.message_types_by_name['Qroma_LogMessage'] = _QROMA_LOGMESSAGE
 DESCRIPTOR.message_types_by_name['FileData'] = _FILEDATA
 DESCRIPTOR.enum_types_by_name['Qroma_LogLevel'] = _QROMA_LOGLEVEL
 DESCRIPTOR.enum_types_by_name['Qroma_DebugCommMode'] = _QROMA_DEBUGCOMMMODE
+DESCRIPTOR.enum_types_by_name['GetFileStatusCode'] = _GETFILESTATUSCODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Qroma_LogMessage = _reflection.GeneratedProtocolMessageType('Qroma_LogMessage', (_message.Message,), {

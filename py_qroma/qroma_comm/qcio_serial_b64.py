@@ -109,6 +109,7 @@ class QcioSerial:
         while time.time() < give_up_time:
             line = await self.read_line(timeout)
             if line:
+                print(line)
                 try:
                     b = base64.b64decode(line)
                     if len(b) > 0:

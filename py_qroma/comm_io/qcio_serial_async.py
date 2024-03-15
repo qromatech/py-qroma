@@ -1,9 +1,7 @@
 import asyncio
 import serial
-import time
-import base64
 from dataclasses import dataclass
-from . import qcio_base
+from py_qroma.serial_comm import qcio_base
 
 
 @dataclass
@@ -13,7 +11,7 @@ class QcioSerialConfig:
     timeout: float = 0.5
 
 
-class QcioSerial(qcio_base.QcioBase):
+class QcioSerialAsync(qcio_base.QcioBase):
     ser: serial.Serial
 
     ser_timeout: float

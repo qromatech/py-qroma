@@ -11,9 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import file_system_commands_pb2 as file__system__commands__pb2
-import qroma_core_pb2 as qroma__core__pb2
-import qroma_streams_pb2 as qroma__streams__pb2
+from . import file_system_commands_pb2 as file__system__commands__pb2
+from . import qroma_core_pb2 as qroma__core__pb2
+from . import qroma_streams_pb2 as qroma__streams__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

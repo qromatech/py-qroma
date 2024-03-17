@@ -3,8 +3,8 @@ import serial
 import time
 from dataclasses import dataclass
 import base64
-from ..qroma_comm_proto import qroma_comm_pb2
-from ..qroma_comm_proto import file_system_commands_pb2
+from py_qroma.qroma_comm_proto import qroma_comm_pb2
+from py_qroma.qroma_comm_proto import file_system_commands_pb2
 
 
 

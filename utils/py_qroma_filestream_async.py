@@ -1,10 +1,9 @@
 import asyncio
-from py_qroma.qroma_comm.qcio_serial import QcioSerial
+from py_qroma.serial_comm.qcio_serial import QcioSerial
 from settings import QROMA_ACTIVE_COM_PORT
 
 from py_qroma.qroma_comm_proto import qroma_comm_pb2
 from py_qroma.qroma_comm_proto import qroma_types_pb2
-from py_qroma.qroma_comm_proto import file_system_commands_pb2
 from py_qroma.qroma_comm_proto import qroma_streams_pb2
 
 import base64

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11qroma-types.proto\"1\n\x10Qroma_LogMessage\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t\"@\n\x08\x46ileData\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x66ilesize\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r*`\n\x0eQroma_LogLevel\x12\x10\n\x0cLogLevel_All\x10\x00\x12\x11\n\rLogLevel_Info\x10\n\x12\x12\n\x0eLogLevel_Error\x10\x64\x12\x15\n\x10LogLevel_Nothing\x10\xff\x01*\xac\x01\n\x13Qroma_DebugCommMode\x12\x18\n\x14\x44\x65\x62ugCommMode_NotSet\x10\x00\x12\x16\n\x12\x44\x65\x62ugCommMode_None\x10\x01\x12\x1c\n\x18\x44\x65\x62ugCommMode_SerialOnly\x10\x02\x12\x1f\n\x1b\x44\x65\x62ugCommMode_BluetoothOnly\x10\x03\x12$\n DebugCommMode_SerialAndBluetooth\x10\x04*s\n\x11GetFileStatusCode\x12\x10\n\x0cGFSC_NOT_SET\x10\x00\x12\x14\n\x10GFSC_FILE_EXISTS\x10\x01\x12\x16\n\x12GFSC_ERR_OPEN_FILE\x10\x02\x12\x1e\n\x1aGFSC_ERR_INVALID_FILE_PATH\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\x11qroma-types.proto\"1\n\x10Qroma_LogMessage\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0f\n\x07message\x18\x02 \x01(\t\"@\n\x08\x46ileData\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x10\n\x08\x66ilesize\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\"i\n\x0f\x46irmwareDetails\x12\x11\n\tbuildTime\x18\x01 \x01(\t\x12\x1f\n\x17qromaFirmwareLibVersion\x18\x02 \x01(\t\x12\"\n\x1aqromaDeviceFirmwareVersion\x18\x03 \x01(\t\"?\n\x11HeartbeatResponse\x12\x12\n\nuptimeInMs\x18\x01 \x01(\r\x12\x16\n\x0eheartbeatTicks\x18\x02 \x01(\r*`\n\x0eQroma_LogLevel\x12\x10\n\x0cLogLevel_All\x10\x00\x12\x11\n\rLogLevel_Info\x10\n\x12\x12\n\x0eLogLevel_Error\x10\x64\x12\x15\n\x10LogLevel_Nothing\x10\xff\x01*\xac\x01\n\x13Qroma_DebugCommMode\x12\x18\n\x14\x44\x65\x62ugCommMode_NotSet\x10\x00\x12\x16\n\x12\x44\x65\x62ugCommMode_None\x10\x01\x12\x1c\n\x18\x44\x65\x62ugCommMode_SerialOnly\x10\x02\x12\x1f\n\x1b\x44\x65\x62ugCommMode_BluetoothOnly\x10\x03\x12$\n DebugCommMode_SerialAndBluetooth\x10\x04*s\n\x11GetFileStatusCode\x12\x10\n\x0cGFSC_NOT_SET\x10\x00\x12\x14\n\x10GFSC_FILE_EXISTS\x10\x01\x12\x16\n\x12GFSC_ERR_OPEN_FILE\x10\x02\x12\x1e\n\x1aGFSC_ERR_INVALID_FILE_PATH\x10\x03*]\n\rHeartbeatType\x12\x18\n\x14HeartbeatType_NotSet\x10\x00\x12\x16\n\x12HeartbeatType_None\x10\x01\x12\x1a\n\x16HeartbeatType_Interval\x10\x02\x62\x06proto3'
 )
 
 _QROMA_LOGLEVEL = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _QROMA_LOGLEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=138,
-  serialized_end=234,
+  serialized_start=310,
+  serialized_end=406,
 )
 _sym_db.RegisterEnumDescriptor(_QROMA_LOGLEVEL)
 
@@ -94,8 +94,8 @@ _QROMA_DEBUGCOMMMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=237,
-  serialized_end=409,
+  serialized_start=409,
+  serialized_end=581,
 )
 _sym_db.RegisterEnumDescriptor(_QROMA_DEBUGCOMMMODE)
 
@@ -130,12 +130,43 @@ _GETFILESTATUSCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=411,
-  serialized_end=526,
+  serialized_start=583,
+  serialized_end=698,
 )
 _sym_db.RegisterEnumDescriptor(_GETFILESTATUSCODE)
 
 GetFileStatusCode = enum_type_wrapper.EnumTypeWrapper(_GETFILESTATUSCODE)
+_HEARTBEATTYPE = _descriptor.EnumDescriptor(
+  name='HeartbeatType',
+  full_name='HeartbeatType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='HeartbeatType_NotSet', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='HeartbeatType_None', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='HeartbeatType_Interval', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=700,
+  serialized_end=793,
+)
+_sym_db.RegisterEnumDescriptor(_HEARTBEATTYPE)
+
+HeartbeatType = enum_type_wrapper.EnumTypeWrapper(_HEARTBEATTYPE)
 LogLevel_All = 0
 LogLevel_Info = 10
 LogLevel_Error = 100
@@ -149,6 +180,9 @@ GFSC_NOT_SET = 0
 GFSC_FILE_EXISTS = 1
 GFSC_ERR_OPEN_FILE = 2
 GFSC_ERR_INVALID_FILE_PATH = 3
+HeartbeatType_NotSet = 0
+HeartbeatType_None = 1
+HeartbeatType_Interval = 2
 
 
 
@@ -236,11 +270,99 @@ _FILEDATA = _descriptor.Descriptor(
   serialized_end=136,
 )
 
+
+_FIRMWAREDETAILS = _descriptor.Descriptor(
+  name='FirmwareDetails',
+  full_name='FirmwareDetails',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='buildTime', full_name='FirmwareDetails.buildTime', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='qromaFirmwareLibVersion', full_name='FirmwareDetails.qromaFirmwareLibVersion', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='qromaDeviceFirmwareVersion', full_name='FirmwareDetails.qromaDeviceFirmwareVersion', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=138,
+  serialized_end=243,
+)
+
+
+_HEARTBEATRESPONSE = _descriptor.Descriptor(
+  name='HeartbeatResponse',
+  full_name='HeartbeatResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uptimeInMs', full_name='HeartbeatResponse.uptimeInMs', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='heartbeatTicks', full_name='HeartbeatResponse.heartbeatTicks', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=245,
+  serialized_end=308,
+)
+
 DESCRIPTOR.message_types_by_name['Qroma_LogMessage'] = _QROMA_LOGMESSAGE
 DESCRIPTOR.message_types_by_name['FileData'] = _FILEDATA
+DESCRIPTOR.message_types_by_name['FirmwareDetails'] = _FIRMWAREDETAILS
+DESCRIPTOR.message_types_by_name['HeartbeatResponse'] = _HEARTBEATRESPONSE
 DESCRIPTOR.enum_types_by_name['Qroma_LogLevel'] = _QROMA_LOGLEVEL
 DESCRIPTOR.enum_types_by_name['Qroma_DebugCommMode'] = _QROMA_DEBUGCOMMMODE
 DESCRIPTOR.enum_types_by_name['GetFileStatusCode'] = _GETFILESTATUSCODE
+DESCRIPTOR.enum_types_by_name['HeartbeatType'] = _HEARTBEATTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Qroma_LogMessage = _reflection.GeneratedProtocolMessageType('Qroma_LogMessage', (_message.Message,), {
@@ -256,6 +378,20 @@ FileData = _reflection.GeneratedProtocolMessageType('FileData', (_message.Messag
   # @@protoc_insertion_point(class_scope:FileData)
   })
 _sym_db.RegisterMessage(FileData)
+
+FirmwareDetails = _reflection.GeneratedProtocolMessageType('FirmwareDetails', (_message.Message,), {
+  'DESCRIPTOR' : _FIRMWAREDETAILS,
+  '__module__' : 'qroma_types_pb2'
+  # @@protoc_insertion_point(class_scope:FirmwareDetails)
+  })
+_sym_db.RegisterMessage(FirmwareDetails)
+
+HeartbeatResponse = _reflection.GeneratedProtocolMessageType('HeartbeatResponse', (_message.Message,), {
+  'DESCRIPTOR' : _HEARTBEATRESPONSE,
+  '__module__' : 'qroma_types_pb2'
+  # @@protoc_insertion_point(class_scope:HeartbeatResponse)
+  })
+_sym_db.RegisterMessage(HeartbeatResponse)
 
 
 # @@protoc_insertion_point(module_scope)
